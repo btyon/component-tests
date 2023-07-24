@@ -1,3 +1,4 @@
+// import * as React from 'react';
 // import Box from '@mui/material/Box';
 // import {
 //   DataGridPremium,
@@ -7,7 +8,7 @@
 // } from '@mui/x-data-grid-premium';
 // import { useDemoData } from '@mui/x-data-grid-generator';
 
-// export default function DataGridPremiumDemo() {
+// export default function Mui() {
 //   const { data, loading } = useDemoData({
 //     dataSet: 'Commodity',
 //     rowLength: 100,
@@ -48,6 +49,7 @@
 //         {...data}
 //         apiRef={apiRef}
 //         loading={loading}
+//         disableRowSelectionOnClick={false}
 //         initialState={initialState}
 //         slots={{ toolbar: GridToolbar }}
 //       />
@@ -56,10 +58,26 @@
 // }
 
 
+import * as React from 'react';
+import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
+import {
+     DataGridPremium
+   } from '@mui/x-data-grid-premium';
+   import {data} from '../data'
+const rows: GridRowsProp = 
+ // { id: 1, col1: 'Hello', col2: 'World' },
+data.map((row)=>{
+   return({id: row.id, Name:row.name})
+});
+
+const columns: GridColDef[] = [
+  { field: 'Name', headerName: 'Name', width: 150 }
+];
+
 export default function Mui() {
   return (
-    <div>
-      mui
+    <div style={{ height: 300, width: '100%' }}>
+      <DataGridPremium rows={rows} columns={columns} />
     </div>
-  )
+  );
 }
