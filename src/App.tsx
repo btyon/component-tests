@@ -5,17 +5,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Root from './pages/root.tsx';
-import ErrorPage from './pages/error-page.tsx';
 import Ej2Grid from './pages/ej2.tsx';
 import PrimeReact from './pages/primereact.tsx';
 import ExtReact from './pages/extreact.tsx';
+import Mui from './pages/mui.tsx';
+import Semantic from './pages/semantic.tsx';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root />,
-      errorElement: <ErrorPage />,
     },
     {
       path: "syncfusion",
@@ -29,6 +29,14 @@ function App() {
     {
       path: "extreact",
       element: <ExtReact  />
+    },
+    {
+      path: "mui",
+      element: <Mui />
+    },
+    {
+      path: "semantic",
+      element: <Semantic />
     },
   ]);
   return (

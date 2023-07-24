@@ -10,9 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/x-data-grid-generator": "^6.10.0",
     "@mui/x-data-grid-premium": "^6.10.0",
-    "@sencha/ext-modern-runtime": "^7.5.0",
-    "@sencha/ext-react-modern": "^7.5.0",
     "@syncfusion/ej2-react-grids": "^22.1.39",
     "afterframe": "^1.0.2",
     "axios": "^1.4.0",
@@ -39,9 +38,5 @@
     "eslint-plugin-react-refresh": "^0.4.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.0"
-  },
-  "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
   }
 }

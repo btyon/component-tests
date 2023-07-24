@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .nav a {
-    background-color: whitesmoke;
+    background-color: rgb(159, 219, 221);
     padding: 15px;
     text-decoration: none;
     color: rgb(75, 87, 99);

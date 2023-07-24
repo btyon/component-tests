@@ -1,6 +1,6 @@
-import { data } from '../data';
+// import { data } from '../data';
 
-function ExtReact(renderStartTime) {
+function ExtReact() {
     return <>test</>
 };
 export default ExtReact;

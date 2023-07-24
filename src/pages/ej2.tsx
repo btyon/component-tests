@@ -4,16 +4,16 @@ import afterFrame from 'afterframe';
 import { measureInteraction } from '../Utils';
 
 function Ej2Grid() {
-    
+
     const interaction = measureInteraction();
 
     afterFrame(() => {
         interaction.end();
-      });
-      
+    });
+
     return <GridComponent dataSource={data} >
         <ColumnsDirective>
-            <ColumnDirective field='Name' width='100' textAlign="Left"/>
+            <ColumnDirective field='Name' width='100' textAlign="Left" />
         </ColumnsDirective>
     </GridComponent>
 };
