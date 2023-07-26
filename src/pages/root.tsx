@@ -9,6 +9,7 @@ export default function Root() {
                     <a href={`/extreact`}>ExtReact ❌</a>
                     <a href={`/mui`}>Mui ❌</a>
                     <a href={`/semantic`}>Semantic ❌</a>
+                    <a href={`/ant`}>Ant ❌</a>
                 </nav>
             </div>
         </>

@@ -22,6 +22,12 @@ function PrimeReact() {
         <div className="card">
             <DataTable value={data} tableStyle={{ minWidth: '50rem' }}>
                 <Column field="name" header="Name"></Column>
+                <Column field="samplesTr" header="SamplesTr"></Column>
+                <Column field="developerNote" header="Developer Note"></Column>
+                <Column field="architectNote" header="Architect Note"></Column>
+                <Column field="returnType" header="Return Type"></Column>
+                <Column field="isDeprecated" header="Is Deprecated"></Column>
+                <Column field="isLost" header="is Lost"></Column>
             </DataTable>
         </div>
     );

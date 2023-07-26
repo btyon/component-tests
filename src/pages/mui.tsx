@@ -1,83 +1,56 @@
-// import * as React from 'react';
-// import Box from '@mui/material/Box';
-// import {
-//   DataGridPremium,
-//   GridToolbar,
-//   useGridApiRef,
-//   useKeepGroupedColumnsHidden,
-// } from '@mui/x-data-grid-premium';
-// import { useDemoData } from '@mui/x-data-grid-generator';
-
-// export default function Mui() {
-//   const { data, loading } = useDemoData({
-//     dataSet: 'Commodity',
-//     rowLength: 100,
-//     editable: true,
-//     visibleFields: [
-//       'commodity',
-//       'quantity',
-//       'filledQuantity',
-//       'status',
-//       'isFilled',
-//       'unitPrice',
-//       'unitPriceCurrency',
-//       'subTotal',
-//       'feeRate',
-//       'feeAmount',
-//       'incoTerm',
-//     ],
-//   });
-//   const apiRef = useGridApiRef();
-
-//   const initialState = useKeepGroupedColumnsHidden({
-//     apiRef,
-//     initialState: {
-//       ...data.initialState,
-//       rowGrouping: {
-//         ...data.initialState?.rowGrouping,
-//         model: ['commodity'],
-//       },
-//       sorting: {
-//         sortModel: [{ field: '__row_group_by_columns_group__', sort: 'asc' }],
-//       },
-//     },
-//   });
-
-//   return (
-//     <Box sx={{ height: 520, width: '100%' }}>
-//       <DataGridPremium
-//         {...data}
-//         apiRef={apiRef}
-//         loading={loading}
-//         disableRowSelectionOnClick={false}
-//         initialState={initialState}
-//         slots={{ toolbar: GridToolbar }}
-//       />
-//     </Box>
-//   );
-// }
-
-
 import * as React from 'react';
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
 import {
-     DataGridPremium
-   } from '@mui/x-data-grid-premium';
-   import {data} from '../data'
-const rows: GridRowsProp = 
- // { id: 1, col1: 'Hello', col2: 'World' },
-data.map((row)=>{
-   return({id: row.id, Name:row.name})
-});
+  DataGridPremium
+} from '@mui/x-data-grid-premium';
+import { data } from '../data'
+import { measureInteraction } from '../Utils';
+import afterFrame from 'afterframe';
+const rows: GridRowsProp =
+  // { id: 1, col1: 'Hello', col2: 'World' },
+  data.map((row) => {
+    return ({ 
+       id           : row.id,
+       Name         : row.name, 
+       samplesEn    : row.definition.samplesEn,
+       samplesTr    : row.definition.samplesTr,
+       developerNote: row.definition.developerNote,
+       architectNote: row.definition.architectNote,
+       returnType   : row.returnType,
+       isDeprecated : row.isDeprecated,
+       isLost       : row.isLost,
+       
+      })
+  });
 
+  const interaction = measureInteraction();
+  afterFrame(() => {
+      interaction.end();
+  });
 const columns: GridColDef[] = [
-  { field: 'Name', headerName: 'Name', width: 150 }
+  { field: 'Name', headerName: 'Name', width: 150 },
+  { field: 'returnType', headerName:'returnType', width:150},
+  { field: 'samplesEn', headerName: 'samplesEn', width: 180 },
+  { field: 'samplesTr', headerName: 'samplesTr', width: 180 },
+  { field: 'developerNote', headerName: 'developerNote', width: 180 },
+  { field: 'architectNote', headerName: 'architectNote', width: 180 },
+  { field: 'isDeprecated', headerName:'isDeprecated', width:150},
+  { field: 'isLost', headerName:'isLost', width:150},
+  
 ];
 
 export default function Mui() {
   return (
     <div style={{ height: 300, width: '100%' }}>
-      <DataGridPremium rows={rows} columns={columns} />
+      <DataGridPremium 
+        rows={rows} columns={columns} 
+        disableRowSelectionOnClick
+        initialState={{
+          rowGrouping: {
+            model: ['Name'],
+          },
+        }}
+        />
     </div>
   );
 }

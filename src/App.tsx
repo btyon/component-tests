@@ -10,7 +10,7 @@ import PrimeReact from './pages/primereact.tsx';
 import ExtReact from './pages/extreact.tsx';
 import Mui from './pages/mui.tsx';
 import Semantic from './pages/semantic.tsx';
-
+import Ant from './pages/ant.tsx';
 function App() {
   const router = createBrowserRouter([
     {
@@ -37,6 +37,10 @@ function App() {
     {
       path: "semantic",
       element: <Semantic />
+    },
+    {
+      path: "ant",
+      element: <Ant />
     },
   ]);
   return (
