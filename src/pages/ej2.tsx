@@ -3,6 +3,7 @@ import {Inject} from '@syncfusion/ej2-react-grids';
 import { data } from '../data';
 import afterFrame from 'afterframe';
 import { measureInteraction } from '../Utils';
+import '../assets/ej2.css';
 
 function Ej2Grid() {
 

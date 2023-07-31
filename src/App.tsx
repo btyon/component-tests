@@ -4,13 +4,13 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Root from './pages/root.tsx';
+
+import Root from './pages/page-utils/root.tsx';
 import Ej2Grid from './pages/ej2.tsx';
 import PrimeReact from './pages/primereact.tsx';
-import ExtReact from './pages/extreact.tsx';
 import Mui from './pages/mui.tsx';
-import Semantic from './pages/semantic.tsx';
 import Ant from './pages/ant.tsx';
+import ReactSuite from './pages/rsuite.tsx';
 function App() {
   const router = createBrowserRouter([
     {
@@ -27,20 +27,16 @@ function App() {
       element: <PrimeReact />
     },
     {
-      path: "extreact",
-      element: <ExtReact  />
-    },
-    {
       path: "mui",
       element: <Mui />
     },
     {
-      path: "semantic",
-      element: <Semantic />
-    },
-    {
       path: "ant",
       element: <Ant />
+    },
+    {
+      path: "rsuite",
+      element: <ReactSuite />
     },
   ]);
   return (

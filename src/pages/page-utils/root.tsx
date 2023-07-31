@@ -6,10 +6,9 @@ export default function Root() {
                 <nav className="nav">
                     <a href={`/syncfusion`}>Syncfusion ✅</a>
                     <a href={`/primereact`}>PrimeReact ✅</a>
-                    <a href={`/extreact`}>ExtReact ❌</a>
-                    <a href={`/mui`}>Mui ❌</a>
-                    <a href={`/semantic`}>Semantic ❌</a>
-                    <a href={`/ant`}>Ant ❌</a>
+                    <a href={`/mui`}>Mui ✅</a>
+                    <a href={`/ant`}>Ant ✅</a>
+                    <a href={`/rsuite`}>ReactSuite ❌</a>
                 </nav>
             </div>
         </>
