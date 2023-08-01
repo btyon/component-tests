@@ -27,7 +27,7 @@
 import React from 'react'
 import { data } from '../data';
 import type { TableColumnsType } from 'antd';
-import { Badge, Dropdown, Space, Table } from 'antd';
+import { Badge, Button, Dropdown, Space, Table } from 'antd';
 
 
 const Ant = () => {
@@ -122,9 +122,9 @@ const Ant = () => {
         }}
         pagination={false}
         dataSource={data_}
+        style={{backgroundColor:'red'}}
       />
     
-     
     </>
   );
 };

@@ -8,7 +8,6 @@ export default function Root() {
                     <a href={`/primereact`}>PrimeReact ✅</a>
                     <a href={`/mui`}>Mui ✅</a>
                     <a href={`/ant`}>Ant ✅</a>
-                    <a href={`/rsuite`}>ReactSuite ❌</a>
                 </nav>
             </div>
         </>

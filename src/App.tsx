@@ -10,7 +10,6 @@ import Ej2Grid from './pages/ej2.tsx';
 import PrimeReact from './pages/primereact.tsx';
 import Mui from './pages/mui.tsx';
 import Ant from './pages/ant.tsx';
-import ReactSuite from './pages/rsuite.tsx';
 function App() {
   const router = createBrowserRouter([
     {
@@ -33,10 +32,6 @@ function App() {
     {
       path: "ant",
       element: <Ant />
-    },
-    {
-      path: "rsuite",
-      element: <ReactSuite />
     },
   ]);
   return (

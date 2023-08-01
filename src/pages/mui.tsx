@@ -38,7 +38,6 @@ const columns: GridColDef[] = [
   { field: 'isLost', headerName:'isLost', width:150},
   
 ];
-
 export default function Mui() {
   return (
     <div style={{ height: 300, width: '100%' }}>
@@ -48,6 +47,14 @@ export default function Mui() {
         initialState={{
           rowGrouping: {
             model: ['Name'],
+          },
+        }}
+        sx={{
+          boxShadow: 2,
+          border: 2,
+          borderColor: 'primary.light',
+          '& .MuiDataGrid-cell:hover': {
+            color: 'primary.main',
           },
         }}
         />

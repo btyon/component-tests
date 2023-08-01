@@ -22,7 +22,7 @@ function PrimeReact() {
                 <Column field="architectNote"   header="Architect Note"></Column>
                 <Column field="returnType"      header="Return Type"></Column>
                 <Column field="isDeprecated"    header="Is Deprecated"></Column>
-                <Column field="isLost"          header="is Lost"></Column>
+                <Column field="isLost"          header="is Lost" headerStyle={{ width: '10%', minWidth: '8rem' }} bodyStyle={{ textAlign: 'center' ,margin:'100px',backgroundColor:'blue'}}></Column>
             </DataTable>
         </div>
     );
