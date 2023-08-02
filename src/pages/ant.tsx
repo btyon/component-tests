@@ -1,36 +1,18 @@
-// import React from 'react'
-// import { data } from '../data';
-// import { DownOutlined } from '@ant-design/icons';
-// import type { TableColumnsType } from 'antd';
-// import { Badge, Dropdown, Space, Table } from 'antd';
-
-// export default function ant() {
-//     interface DataType {
-
-//     }
-
-//     const columns: TableColumnsType<DataType> = [
-//         { title: 'Name', dataIndex: 'name', key: 'name' },
-//     ];
-
-//     return (
-//         <Table
-//             dataSource={data}
-//             columns={columns}
-//             pagination={false}
-//             expandable={{ expandedRowRender, defaultExpandedRowKeys: ['0'] }}
-//             size='small'
-//         />
-//     )
-// }
-
 import React from 'react'
-import { data } from '../data';
+import { data as dataRaw } from '../data';
 import type { TableColumnsType } from 'antd';
 import { Badge, Button, Dropdown, Space, Table } from 'antd';
 
 
 const Ant = () => {
+
+  const data = dataRaw.map(x => {
+    x["key"] = x.id;
+    return x;
+  });
+  console.log(data,"fnal");
+  
+
   const expandedRowRender = (a, b) => {
     const columns = [
       {
@@ -70,28 +52,12 @@ const Ant = () => {
       },
     ];
 
-    /*"name"         
-"samplesTr"    
-"developerNote"
-"architectNote"
-"returnType"   
-"isDeprecated" 
-"isLost"       */ 
-        // const data_ = [{returnType: "cafer"}];
     const data_ = data.filter((row, index) => {
       return row.name === a.name;
     });
-    // for (let i = 0; i < data.length; ++i) {
-    //   data_.add({
-    //     key: data[i].name,
-    //     name: data[i].name
-    //   });
-    // }
-    return <Table columns={columns} dataSource={data_} pagination={false} />;
+    
+    return <Table rowKey={data.key} columns={columns} dataSource={data_} pagination={false} />;
   };
-
-
-
 
 
   const columns = [
@@ -110,11 +76,10 @@ const Ant = () => {
     }
     return acc;
   }, []);
-  console.log(data_);
-
   return (
     <>
       <Table
+        rowKey={data.key}
         columns={columns}
         expandable={{
           expandedRowRender,
@@ -122,7 +87,8 @@ const Ant = () => {
         }}
         pagination={false}
         dataSource={data_}
-        style={{backgroundColor:'red'}}
+        style={{background:'red'}}
+
       />
     
     </>

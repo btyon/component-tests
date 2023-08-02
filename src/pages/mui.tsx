@@ -40,7 +40,7 @@ const columns: GridColDef[] = [
 ];
 export default function Mui() {
   return (
-    <div style={{ height: 300, width: '100%' }}>
+    <div style={{ height: '97vh'}}>
       <DataGridPremium 
         rows={rows} columns={columns} 
         disableRowSelectionOnClick
